@@ -1,0 +1,149 @@
+{
+  "format": 2,
+  "note": "Digests (SHA-256, records, bytes) of the joint caller's decompressed VCF text, header included, per scenario of tests/integration/test_rust_joint_call.py; closing_lines are the run's 'Completed!' and catalog cross-check stderr lines; each scenario's 'recorded' says when, where and against what its text was recorded, and 'closing_lines_recorded' (when present) when only its closing lines were re-recorded. Recorded with MOSAIC_JOINT_CALL_GOLDEN_RECORD=1 and MOSAIC_JOINT_CALL_GOLDEN_REASON=<why> (jc_testlib.assert_golden); the VCFs are local copies under test_data/golden_joint_call/.",
+  "scenarios": {
+    "banded_cross_shard_only": {
+      "bytes": 47701,
+      "closing_lines": [
+        "Completed! Total processed: 263 variants",
+        "Catalog cross-check: the catalog's non-ref allele counts (alleles.count) equal the emitted AC at every record (263 records)"
+      ],
+      "recorded": {
+        "commit": "5cea80a",
+        "date": "2026-11-10T23:47:23Z",
+        "platform": "Darwin 24.6.0 arm64",
+        "reference": "the Python engine (joint_call.py --engine python) and the Rust engine byte for byte, header included, and their closing lines equal (tests/integration/test_rust_joint_call.py::_both); K1 step 1a: the banded cross-shard batch alone (without HG00096 + HG00097), recorded while both engines agreed",
+        "tracked_changes": true
+      },
+      "records": 263,
+      "sha256": "e23f240dc4ee7a0b126bb800f3f6cf94989f39016f52bf7893745fc4b91f7410"
+    },
+    "banded_cross_shard_with_hg00096_hg00097": {
+      "bytes": 1430993,
+      "closing_lines": [
+        "Completed! Total processed: 7292 variants",
+        "Catalog cross-check: the catalog's non-ref allele counts (alleles.count) equal the emitted AC at every record (7292 records)"
+      ],
+      "recorded": {
+        "commit": "5cea80a",
+        "date": "2026-11-10T23:32:41Z",
+        "platform": "Darwin 24.6.0 arm64",
+        "reference": "the Python engine (joint_call.py --engine python) and the Rust engine byte for byte, header included, and their closing lines equal (tests/integration/test_rust_joint_call.py::_both)",
+        "tracked_changes": true
+      },
+      "records": 7292,
+      "sha256": "ac42d5a6ceaa138db1478cbec23ed219f804583d116dcbaa8154e4640dc6be18"
+    },
+    "fresh_cohort_chr21": {
+      "bytes": 38142275,
+      "closing_lines": [
+        "Completed! Total processed: 132382 variants",
+        "Catalog cross-check: 3 of 132382 records have catalog non-ref allele counts (alleles.count) that differ from the emitted AC",
+        "  a sample's called genotype written ./. (an allele of it, e.g. <NON_REF>, is not among the record's alleles): 3",
+        "  first 3 differing site(s): chr21:10447401, chr21:28831734, chr21:31843763"
+      ],
+      "recorded": {
+        "commit": "5cea80a",
+        "date": "2026-11-10T23:32:41Z",
+        "platform": "Darwin 24.6.0 arm64",
+        "reference": "the Python engine (joint_call.py --engine python) and the Rust engine byte for byte, header included, and their closing lines equal (tests/integration/test_rust_joint_call.py::_both)",
+        "tracked_changes": true
+      },
+      "records": 132382,
+      "sha256": "6f81ce23bae24a89e23aafe3c80e782a3024108e8f96eaeb09b6da470418b91f"
+    },
+    "golden_region_chr21_10M_12M": {
+      "bytes": 618726,
+      "closing_lines": [
+        "Completed! Total processed: 3497 variants",
+        "Catalog cross-check: the catalog's non-ref allele counts (alleles.count) equal the emitted AC at every record (3497 records)"
+      ],
+      "recorded": {
+        "commit": "5cea80a",
+        "date": "2026-11-10T23:32:41Z",
+        "platform": "Darwin 24.6.0 arm64",
+        "reference": "the Python engine (joint_call.py --engine python) and the Rust engine byte for byte, header included, and their closing lines equal (tests/integration/test_rust_joint_call.py::_both)",
+        "tracked_changes": true
+      },
+      "records": 3497,
+      "sha256": "409bb46dfba00ea53c005d821451a214850d306740472d691c65d417bac6251f"
+    },
+    "removed_HG00100_aggregated": {
+      "bytes": 31787909,
+      "closing_lines": [
+        "Completed! Total processed: 124157 variants",
+        "Catalog cross-check: 2 of 124157 records have catalog non-ref allele counts (alleles.count) that differ from the emitted AC",
+        "  a sample's called genotype written ./. (an allele of it, e.g. <NON_REF>, is not among the record's alleles): 2",
+        "  first 2 differing site(s): chr21:10447401, chr21:28831734"
+      ],
+      "closing_lines_recorded": {
+        "commit": "5cea80a",
+        "date": "2026-11-10T23:59:37Z",
+        "reason": "K1: the cross-check's run reason is stale or none; the tombstoned label is gone; the VCF digest unchanged"
+      },
+      "recorded": {
+        "commit": "5cea80a",
+        "date": "2026-11-10T23:32:41Z",
+        "platform": "Darwin 24.6.0 arm64",
+        "reference": "the Python engine (joint_call.py --engine python) and the Rust engine byte for byte, header included, and their closing lines equal (tests/integration/test_rust_joint_call.py::_both)",
+        "tracked_changes": true
+      },
+      "records": 124157,
+      "sha256": "8214a107834ca902f98c8ae9c5ab62579a0e4ae58830d1cb278cf26558dd1272"
+    },
+    "six_samples_bands20_60": {
+      "bytes": 38061309,
+      "closing_lines": [
+        "Completed! Total processed: 132382 variants",
+        "Catalog cross-check: 3 of 132382 records have catalog non-ref allele counts (alleles.count) that differ from the emitted AC",
+        "  a sample's called genotype written ./. (an allele of it, e.g. <NON_REF>, is not among the record's alleles): 3",
+        "  first 3 differing site(s): chr21:10447401, chr21:28831734, chr21:31843763"
+      ],
+      "recorded": {
+        "commit": "b65c6a0",
+        "date": "2026-11-11T03:28:48Z",
+        "platform": "Darwin 24.6.0 arm64",
+        "reference": "the Rust joint caller's output, equal on the Python ingest worker's lake and on the Rust ingest worker's (test_rust_engine.py::test_batches_row_for_row[bands20,60]); K6: a new scenario, recorded while the Python and the Rust ingest worker's lakes gave the same VCF",
+        "tracked_changes": true
+      },
+      "records": 132382,
+      "sha256": "5a6281bc19d89714862026c1fc6f4262127e211228fbc50e6730e4714e5b67c4"
+    },
+    "slice_chr21_10M_12M": {
+      "bytes": 1396509,
+      "closing_lines": [
+        "Completed! Total processed: 4587 variants",
+        "Catalog cross-check: 1 of 4587 records have catalog non-ref allele counts (alleles.count) that differ from the emitted AC",
+        "  a sample's called genotype written ./. (an allele of it, e.g. <NON_REF>, is not among the record's alleles): 1",
+        "  first 1 differing site(s): chr21:10447401"
+      ],
+      "recorded": {
+        "commit": "5cea80a",
+        "date": "2026-11-10T23:32:41Z",
+        "platform": "Darwin 24.6.0 arm64",
+        "reference": "the Python engine (joint_call.py --engine python) and the Rust engine byte for byte, header included, and their closing lines equal (tests/integration/test_rust_joint_call.py::_both)",
+        "tracked_changes": true
+      },
+      "records": 4587,
+      "sha256": "6e5d8c175a33db5d9c4ac3f262b9c8a510dc12d2892cff30ccaf33730f8b04d2"
+    },
+    "stale_after_remove_HG00100": {
+      "bytes": 33724828,
+      "closing_lines": [
+        "Completed! Total processed: 132382 variants",
+        "Catalog cross-check: 73254 of 132382 records have catalog non-ref allele counts (alleles.count) that differ from the emitted AC",
+        "  stale aggregates (--allow-stale): 73254",
+        "  first 10 differing site(s): chr21:5216564, chr21:5216767, chr21:5216928, chr21:5216956, chr21:5217052, chr21:5217124, chr21:5217372, chr21:5217592, chr21:5217677, chr21:5217842"
+      ],
+      "recorded": {
+        "commit": "5cea80a",
+        "date": "2026-11-10T23:32:41Z",
+        "platform": "Darwin 24.6.0 arm64",
+        "reference": "the Python engine (joint_call.py --engine python) and the Rust engine byte for byte, header included, and their closing lines equal (tests/integration/test_rust_joint_call.py::_both)",
+        "tracked_changes": true
+      },
+      "records": 132382,
+      "sha256": "ae47090865fa6cbc3a0b325ff75d7a25258433706e88438b105043eb16c004d3"
+    }
+  }
+}

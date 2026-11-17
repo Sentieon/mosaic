@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sentieon-mosaic"
+version = "0.1.0"
+description = "Scalable gVCF ingestion pipeline (gVCF -> PostgreSQL + Apache Iceberg)"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "BSD-2-Clause"
+license-files = ["LICENSE"]
+# Direct runtime dependencies. requirements.txt holds the fully pinned lock
+# for reproducible installs; this is the abstract set the package imports.
+dependencies = [
+    "boto3",
+    "numpy",
+    "psycopg2",
+    "pyarrow",
+    "pyiceberg>=0.11",
+    "vcflib>=1.0.1",
+]
+
+# The import package and the console command are both `mosaic`; the
+# distribution is published as `sentieon-mosaic`.
+[project.scripts]
+mosaic = "mosaic.cli:main"
+
+[tool.setuptools]
+packages = ["mosaic"]

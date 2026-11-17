@@ -1,0 +1,897 @@
+{
+  "format": 1,
+  "note": "SHA-256 of a canonical serialization (jc_testlib.canonical_digest: JSON with sorted keys, floats as IEEE 754 bits, bytes as hex) of what the Python and Rust ingest workers' comparison tests compare, per case, with a few readable counts; each case's 'recorded' says when, where (the platform: floats are bit-exact, so a digest is per platform) and against what it was recorded. Recorded with MOSAIC_INGEST_GOLDEN_RECORD=1 and MOSAIC_INGEST_GOLDEN_REASON=<why> (jc_testlib.assert_ingest_signature); the local copies are under test_data/golden_ingest/.",
+  "scenarios": {
+    "batches/bands20,60": {
+      "counts": {
+        "batch_allele_counts": [
+          3,
+          771624
+        ],
+        "batch_genotypes": [
+          3,
+          251044
+        ],
+        "batch_ref_blocks": [
+          3,
+          90540375
+        ],
+        "batch_site_info": [
+          3,
+          251044
+        ],
+        "sample_ref_blocks": [
+          3,
+          5002492
+        ],
+        "sample_site_info": [
+          3,
+          379404
+        ]
+      },
+      "recorded": {
+        "commit": "b65c6a0",
+        "date": "2026-11-11T02:00:41Z",
+        "platform": "Darwin 24.6.0 arm64",
+        "reference": "the Python ingest worker and the Rust ingest worker compared in the same test, equal (three 2-sample batches row for row, test_rust_engine.py::test_batches_row_for_row); K6 stage A: first recording, while both ingest workers exist and agree",
+        "tracked_changes": true
+      },
+      "sha256": "db80c564f36f5b5e349928278d9badf296752a774f84c4b33a4d6e7e7ee77c89"
+    },
+    "batches/defaults": {
+      "counts": {
+        "batch_allele_counts": [
+          3,
+          771624
+        ],
+        "batch_genotypes": [
+          3,
+          251044
+        ],
+        "batch_ref_blocks": [
+          3,
+          90539874
+        ],
+        "batch_site_info": [
+          3,
+          251044
+        ],
+        "sample_ref_blocks": [
+          3,
+          12591956
+        ],
+        "sample_site_info": [
+          3,
+          379404
+        ]
+      },
+      "recorded": {
+        "commit": "b65c6a0",
+        "date": "2026-11-11T01:46:34Z",
+        "platform": "Darwin 24.6.0 arm64",
+        "reference": "the Python ingest worker and the Rust ingest worker compared in the same test, equal (three 2-sample batches row for row, test_rust_engine.py::test_batches_row_for_row); K6 stage A: first recording, while both ingest workers exist and agree",
+        "tracked_changes": true
+      },
+      "sha256": "1252cdb0a1f08d84aeaf5aa44d64716cb5602da5d206ce98543f0ab33260a207"
+    },
+    "batches/workflow": {
+      "counts": {
+        "batch_allele_counts": [
+          3,
+          771624
+        ],
+        "batch_genotypes": [
+          3,
+          251044
+        ],
+        "batch_ref_blocks": [
+          3,
+          90539874
+        ],
+        "batch_site_info": [
+          3,
+          251044
+        ],
+        "sample_ref_blocks": [
+          3,
+          12592273
+        ],
+        "sample_site_info": [
+          3,
+          379404
+        ]
+      },
+      "recorded": {
+        "commit": "b65c6a0",
+        "date": "2026-11-11T01:53:54Z",
+        "platform": "Darwin 24.6.0 arm64",
+        "reference": "the Python ingest worker and the Rust ingest worker compared in the same test, equal (three 2-sample batches row for row, test_rust_engine.py::test_batches_row_for_row); K6 stage A: first recording, while both ingest workers exist and agree",
+        "tracked_changes": true
+      },
+      "sha256": "ed69de97524e2a47c2f173a2a9ceb53b270b17006435cd1511674a7c5c8a01e4"
+    },
+    "driver_combine/r3_8shards_1mb": {
+      "counts": {
+        "files": 8,
+        "rows": 790341
+      },
+      "recorded": {
+        "commit": "b65c6a0",
+        "date": "2026-11-11T01:36:48Z",
+        "platform": "Darwin 24.6.0 arm64",
+        "reference": "the Python ingest worker and the Rust ingest worker compared in the same test, equal (the worker's combine against _python_combine of the same local files, test_rust_engine_driver.py::test_worker_combine_threads_and_the_python_combine); K6 stage A: first recording, while both ingest workers exist and agree",
+        "tracked_changes": true
+      },
+      "sha256": "bf25ab497af79f3b8cd8bbb2b1c15806c939d2c3ef2b48053b59b87a220420ae"
+    },
+    "row_oracle/cross_shard_span": {
+      "counts": {
+        "bac_paths": [
+          1,
+          607
+        ],
+        "bgt_paths": [
+          1,
+          196
+        ],
+        "brb_paths": [
+          3,
+          125781
+        ],
+        "bsi_paths": [
+          1,
+          196
+        ],
+        "rb_paths": [
+          3,
+          16463
+        ],
+        "si_paths": [
+          3,
+          252
+        ]
+      },
+      "recorded": {
+        "commit": "b65c6a0",
+        "date": "2026-11-11T01:39:21Z",
+        "platform": "Darwin 24.6.0 arm64",
+        "reference": "the Python ingest worker and the Rust ingest worker compared in the same test, equal (the one-shard row oracle, test_rust_engine.py::row_oracle); K6 stage A: first recording, while both ingest workers exist and agree",
+        "tracked_changes": true
+      },
+      "sha256": "a4d9a94b73aa77454de2b0268a5583f83ce8ffd5d92fd52adec611468f831c3e"
+    },
+    "row_oracle/downloads-chr21": {
+      "counts": {
+        "bac_paths": [
+          1,
+          13312
+        ],
+        "bgt_paths": [
+          1,
+          4266
+        ],
+        "brb_paths": [
+          1,
+          649280
+        ],
+        "bsi_paths": [
+          1,
+          4266
+        ],
+        "rb_paths": [
+          1,
+          235462
+        ],
+        "si_paths": [
+          1,
+          10997
+        ]
+      },
+      "recorded": {
+        "commit": "b65c6a0",
+        "date": "2026-11-11T01:39:08Z",
+        "platform": "Darwin 24.6.0 arm64",
+        "reference": "the Python ingest worker and the Rust ingest worker compared in the same test, equal (the one-shard row oracle, test_rust_engine.py::row_oracle); K6 stage A: first recording, while both ingest workers exist and agree",
+        "tracked_changes": true
+      },
+      "sha256": "1d4815783c7f0e1aa1420e6c0c4da1d5f3a36398a84083772a54e5e063262078"
+    },
+    "row_oracle/downloads-chr21-bands": {
+      "counts": {
+        "bac_paths": [
+          1,
+          5195
+        ],
+        "bgt_paths": [
+          1,
+          1654
+        ],
+        "brb_paths": [
+          5,
+          342148
+        ],
+        "bsi_paths": [
+          1,
+          1654
+        ],
+        "rb_paths": [
+          5,
+          54716
+        ],
+        "si_paths": [
+          5,
+          4131
+        ]
+      },
+      "recorded": {
+        "commit": "b65c6a0",
+        "date": "2026-11-11T01:39:12Z",
+        "platform": "Darwin 24.6.0 arm64",
+        "reference": "the Python ingest worker and the Rust ingest worker compared in the same test, equal (the one-shard row oracle, test_rust_engine.py::row_oracle); K6 stage A: first recording, while both ingest workers exist and agree",
+        "tracked_changes": true
+      },
+      "sha256": "5e655ba4427d9ee312b0b602c01382f1c58fec28ddb6abebc8ffaa0e295d4bd8"
+    },
+    "row_oracle/downloads-chr22": {
+      "counts": {
+        "bac_paths": [
+          1,
+          6807
+        ],
+        "bgt_paths": [
+          1,
+          2223
+        ],
+        "brb_paths": [
+          10,
+          527654
+        ],
+        "bsi_paths": [
+          1,
+          2223
+        ],
+        "rb_paths": [
+          10,
+          37129
+        ],
+        "si_paths": [
+          10,
+          2223
+        ]
+      },
+      "recorded": {
+        "commit": "b65c6a0",
+        "date": "2026-11-11T01:39:00Z",
+        "platform": "Darwin 24.6.0 arm64",
+        "reference": "the Python ingest worker and the Rust ingest worker compared in the same test, equal (the one-shard row oracle, test_rust_engine.py::row_oracle); K6 stage A: first recording, while both ingest workers exist and agree",
+        "tracked_changes": true
+      },
+      "sha256": "e87d932c7811fdda47d23e556d5660d811bb79732b0441a1664095ac3d78bb84"
+    },
+    "row_oracle/gvcfs4-130k": {
+      "counts": {
+        "bac_paths": [
+          1,
+          607
+        ],
+        "bgt_paths": [
+          1,
+          196
+        ],
+        "brb_paths": [
+          3,
+          125781
+        ],
+        "bsi_paths": [
+          1,
+          196
+        ],
+        "rb_paths": [
+          3,
+          16463
+        ],
+        "si_paths": [
+          3,
+          252
+        ]
+      },
+      "recorded": {
+        "commit": "b65c6a0",
+        "date": "2026-11-11T01:38:48Z",
+        "platform": "Darwin 24.6.0 arm64",
+        "reference": "the Python ingest worker and the Rust ingest worker compared in the same test, equal (the one-shard row oracle, test_rust_engine.py::row_oracle); K6 stage A: first recording, while both ingest workers exist and agree",
+        "tracked_changes": true
+      },
+      "sha256": "a4d9a94b73aa77454de2b0268a5583f83ce8ffd5d92fd52adec611468f831c3e"
+    },
+    "row_oracle/gvcfs4-130k-bands20,60": {
+      "counts": {
+        "bac_paths": [
+          1,
+          607
+        ],
+        "bgt_paths": [
+          1,
+          196
+        ],
+        "brb_paths": [
+          3,
+          125781
+        ],
+        "bsi_paths": [
+          1,
+          196
+        ],
+        "rb_paths": [
+          3,
+          8104
+        ],
+        "si_paths": [
+          3,
+          252
+        ]
+      },
+      "recorded": {
+        "commit": "b65c6a0",
+        "date": "2026-11-11T01:38:55Z",
+        "platform": "Darwin 24.6.0 arm64",
+        "reference": "the Python ingest worker and the Rust ingest worker compared in the same test, equal (the one-shard row oracle, test_rust_engine.py::row_oracle); K6 stage A: first recording, while both ingest workers exist and agree",
+        "tracked_changes": true
+      },
+      "sha256": "6f054ced007d9c8226953ef88289a29d65f95f71b24e7ce8b98d9d35a1561d40"
+    },
+    "row_oracle/gvcfs4-500k": {
+      "counts": {
+        "bac_paths": [
+          1,
+          3893
+        ],
+        "bgt_paths": [
+          1,
+          1246
+        ],
+        "brb_paths": [
+          5,
+          339785
+        ],
+        "bsi_paths": [
+          1,
+          1246
+        ],
+        "rb_paths": [
+          5,
+          43566
+        ],
+        "si_paths": [
+          5,
+          1865
+        ]
+      },
+      "recorded": {
+        "commit": "b65c6a0",
+        "date": "2026-11-11T01:38:47Z",
+        "platform": "Darwin 24.6.0 arm64",
+        "reference": "the Python ingest worker and the Rust ingest worker compared in the same test, equal (the one-shard row oracle, test_rust_engine.py::row_oracle); K6 stage A: first recording, while both ingest workers exist and agree",
+        "tracked_changes": true
+      },
+      "sha256": "661b77359c593fb04a71cb1363b3be6c4580b4a0453f22bb3b5aa5051029d0de"
+    },
+    "row_oracle/gvcfs4-bands20,60": {
+      "counts": {
+        "bac_paths": [
+          1,
+          3893
+        ],
+        "bgt_paths": [
+          1,
+          1246
+        ],
+        "brb_paths": [
+          5,
+          339785
+        ],
+        "bsi_paths": [
+          1,
+          1246
+        ],
+        "rb_paths": [
+          5,
+          26059
+        ],
+        "si_paths": [
+          5,
+          1865
+        ]
+      },
+      "recorded": {
+        "commit": "b65c6a0",
+        "date": "2026-11-11T01:38:52Z",
+        "platform": "Darwin 24.6.0 arm64",
+        "reference": "the Python ingest worker and the Rust ingest worker compared in the same test, equal (the one-shard row oracle, test_rust_engine.py::row_oracle); K6 stage A: first recording, while both ingest workers exist and agree",
+        "tracked_changes": true
+      },
+      "sha256": "28a79903d85e905a227bd2f2998f46c20e3c5bcba96b72fe0ad878ab9f4703ec"
+    },
+    "row_oracle/gvcfs4-bandsall": {
+      "counts": {
+        "bac_paths": [
+          1,
+          3893
+        ],
+        "bgt_paths": [
+          1,
+          1246
+        ],
+        "brb_paths": [
+          5,
+          339785
+        ],
+        "bsi_paths": [
+          1,
+          1246
+        ],
+        "rb_paths": [
+          5,
+          1873
+        ],
+        "si_paths": [
+          5,
+          1865
+        ]
+      },
+      "recorded": {
+        "commit": "b65c6a0",
+        "date": "2026-11-11T01:38:54Z",
+        "platform": "Darwin 24.6.0 arm64",
+        "reference": "the Python ingest worker and the Rust ingest worker compared in the same test, equal (the one-shard row oracle, test_rust_engine.py::row_oracle); K6 stage A: first recording, while both ingest workers exist and agree",
+        "tracked_changes": true
+      },
+      "sha256": "c5285be9c56ebb9f2352b14b37916abf592ff0a09424b7fef3a56889b9bb05a6"
+    },
+    "row_oracle/gvcfs4-defaults": {
+      "counts": {
+        "bac_paths": [
+          1,
+          68595
+        ],
+        "bgt_paths": [
+          1,
+          22325
+        ],
+        "brb_paths": [
+          2,
+          7616368
+        ],
+        "bsi_paths": [
+          1,
+          22325
+        ],
+        "rb_paths": [
+          1,
+          868520
+        ],
+        "si_paths": [
+          1,
+          33656
+        ]
+      },
+      "recorded": {
+        "commit": "b65c6a0",
+        "date": "2026-11-11T01:38:44Z",
+        "platform": "Darwin 24.6.0 arm64",
+        "reference": "the Python ingest worker and the Rust ingest worker compared in the same test, equal (the one-shard row oracle, test_rust_engine.py::row_oracle); K6 stage A: first recording, while both ingest workers exist and agree",
+        "tracked_changes": true
+      },
+      "sha256": "84acb26c8cb65a24c866d7adefe0f06ff0b7dc354820646b2602b55c9f6a0f97"
+    },
+    "row_oracle/gvcfs4-pbs0": {
+      "counts": {
+        "bac_paths": [
+          1,
+          3893
+        ],
+        "bgt_paths": [
+          1,
+          1246
+        ],
+        "brb_paths": [
+          1,
+          339785
+        ],
+        "bsi_paths": [
+          1,
+          1246
+        ],
+        "rb_paths": [
+          1,
+          43566
+        ],
+        "si_paths": [
+          1,
+          1865
+        ]
+      },
+      "recorded": {
+        "commit": "b65c6a0",
+        "date": "2026-11-11T01:38:50Z",
+        "platform": "Darwin 24.6.0 arm64",
+        "reference": "the Python ingest worker and the Rust ingest worker compared in the same test, equal (the one-shard row oracle, test_rust_engine.py::row_oracle); K6 stage A: first recording, while both ingest workers exist and agree",
+        "tracked_changes": true
+      },
+      "sha256": "5914c574ca289da2fecca873203e594bd1a34ca6a9bf29f38d43bb2a448bbdc2"
+    },
+    "row_oracle/gvcfs4-pbs0-bandsall": {
+      "counts": {
+        "bac_paths": [
+          1,
+          3893
+        ],
+        "bgt_paths": [
+          1,
+          1246
+        ],
+        "brb_paths": [
+          1,
+          339785
+        ],
+        "bsi_paths": [
+          1,
+          1246
+        ],
+        "rb_paths": [
+          1,
+          1869
+        ],
+        "si_paths": [
+          1,
+          1865
+        ]
+      },
+      "recorded": {
+        "commit": "b65c6a0",
+        "date": "2026-11-11T01:38:57Z",
+        "platform": "Darwin 24.6.0 arm64",
+        "reference": "the Python ingest worker and the Rust ingest worker compared in the same test, equal (the one-shard row oracle, test_rust_engine.py::row_oracle); K6 stage A: first recording, while both ingest workers exist and agree",
+        "tracked_changes": true
+      },
+      "sha256": "d0d41660ba7b3b0e72e8ec9d4bd754226a7f96c97eb34e938c8c2b0f7eaec1e4"
+    },
+    "row_oracle/gvcfs5": {
+      "counts": {
+        "bac_paths": [
+          1,
+          11621
+        ],
+        "bgt_paths": [
+          1,
+          3758
+        ],
+        "brb_paths": [
+          9,
+          638391
+        ],
+        "bsi_paths": [
+          1,
+          3758
+        ],
+        "rb_paths": [
+          9,
+          118979
+        ],
+        "si_paths": [
+          9,
+          5823
+        ]
+      },
+      "recorded": {
+        "commit": "b65c6a0",
+        "date": "2026-11-11T01:39:18Z",
+        "platform": "Darwin 24.6.0 arm64",
+        "reference": "the Python ingest worker and the Rust ingest worker compared in the same test, equal (the one-shard row oracle, test_rust_engine.py::row_oracle); K6 stage A: first recording, while both ingest workers exist and agree",
+        "tracked_changes": true
+      },
+      "sha256": "b08ff82555bf8b8083960d8469f6421696c31f942582ef447281bee83d6921c5"
+    },
+    "row_oracle/gvcfs5-bandsall": {
+      "counts": {
+        "bac_paths": [
+          1,
+          4102
+        ],
+        "bgt_paths": [
+          1,
+          1315
+        ],
+        "brb_paths": [
+          9,
+          334351
+        ],
+        "bsi_paths": [
+          1,
+          1315
+        ],
+        "rb_paths": [
+          9,
+          3601
+        ],
+        "si_paths": [
+          9,
+          2049
+        ]
+      },
+      "recorded": {
+        "commit": "b65c6a0",
+        "date": "2026-11-11T01:39:20Z",
+        "platform": "Darwin 24.6.0 arm64",
+        "reference": "the Python ingest worker and the Rust ingest worker compared in the same test, equal (the one-shard row oracle, test_rust_engine.py::row_oracle); K6 stage A: first recording, while both ingest workers exist and agree",
+        "tracked_changes": true
+      },
+      "sha256": "a950cbd01ea59a6f687eb47cda428375495f3f521dd7ece0715a8f33380707d8"
+    },
+    "row_oracle/multi_shard_run/0": {
+      "counts": {
+        "bac_paths": [
+          1,
+          627
+        ],
+        "bgt_paths": [
+          1,
+          202
+        ],
+        "brb_paths": [
+          3,
+          125776
+        ],
+        "bsi_paths": [
+          1,
+          202
+        ],
+        "rb_paths": [
+          3,
+          16500
+        ],
+        "si_paths": [
+          3,
+          264
+        ]
+      },
+      "recorded": {
+        "commit": "b65c6a0",
+        "date": "2026-11-11T01:39:26Z",
+        "platform": "Darwin 24.6.0 arm64",
+        "reference": "the Python ingest worker and the Rust ingest worker compared in the same test, equal (the one-shard row oracle, test_rust_engine.py::row_oracle); K6 stage A: first recording, while both ingest workers exist and agree",
+        "tracked_changes": true
+      },
+      "sha256": "ed314f42cf269c0bce48024e3f3eb3a6214c8c5f80fc144e9fae64e63d7b7a72"
+    },
+    "row_oracle/multi_shard_run/1": {
+      "counts": {
+        "bac_paths": [
+          1,
+          77
+        ],
+        "bgt_paths": [
+          1,
+          25
+        ],
+        "brb_paths": [
+          2,
+          37212
+        ],
+        "bsi_paths": [
+          1,
+          25
+        ],
+        "rb_paths": [
+          2,
+          4266
+        ],
+        "si_paths": [
+          2,
+          30
+        ]
+      },
+      "recorded": {
+        "commit": "b65c6a0",
+        "date": "2026-11-11T01:39:26Z",
+        "platform": "Darwin 24.6.0 arm64",
+        "reference": "the Python ingest worker and the Rust ingest worker compared in the same test, equal (the one-shard row oracle, test_rust_engine.py::row_oracle); K6 stage A: first recording, while both ingest workers exist and agree",
+        "tracked_changes": true
+      },
+      "sha256": "d4c9d6a2ec7eb06d8adc6a1b9f84fd41dd134523968449943ce7246322cd0981"
+    },
+    "row_oracle/multi_shard_run/2": {
+      "counts": {
+        "bac_paths": [
+          1,
+          1062
+        ],
+        "bgt_paths": [
+          1,
+          339
+        ],
+        "brb_paths": [
+          3,
+          67764
+        ],
+        "bsi_paths": [
+          1,
+          339
+        ],
+        "rb_paths": [
+          3,
+          8429
+        ],
+        "si_paths": [
+          3,
+          517
+        ]
+      },
+      "recorded": {
+        "commit": "b65c6a0",
+        "date": "2026-11-11T01:39:26Z",
+        "platform": "Darwin 24.6.0 arm64",
+        "reference": "the Python ingest worker and the Rust ingest worker compared in the same test, equal (the one-shard row oracle, test_rust_engine.py::row_oracle); K6 stage A: first recording, while both ingest workers exist and agree",
+        "tracked_changes": true
+      },
+      "sha256": "f10285781e82f606bcb7ba6abb14daa6f168feeb73b0724dd33247511a45ab00"
+    },
+    "row_oracle/multi_shard_run/3": {
+      "counts": {
+        "bac_paths": [
+          1,
+          2350
+        ],
+        "bgt_paths": [
+          1,
+          749
+        ],
+        "brb_paths": [
+          4,
+          127283
+        ],
+        "bsi_paths": [
+          1,
+          749
+        ],
+        "rb_paths": [
+          4,
+          18364
+        ],
+        "si_paths": [
+          4,
+          1163
+        ]
+      },
+      "recorded": {
+        "commit": "b65c6a0",
+        "date": "2026-11-11T01:39:26Z",
+        "platform": "Darwin 24.6.0 arm64",
+        "reference": "the Python ingest worker and the Rust ingest worker compared in the same test, equal (the one-shard row oracle, test_rust_engine.py::row_oracle); K6 stage A: first recording, while both ingest workers exist and agree",
+        "tracked_changes": true
+      },
+      "sha256": "ed96692137f383625498abfedce591bf9172f73925a12f48cb28e8b4ff586167"
+    },
+    "row_oracle/overlapped": {
+      "counts": {
+        "bac_paths": [
+          1,
+          18
+        ],
+        "bgt_paths": [
+          1,
+          6
+        ],
+        "brb_paths": [
+          2,
+          51
+        ],
+        "bsi_paths": [
+          1,
+          6
+        ],
+        "rb_paths": [
+          2,
+          3
+        ],
+        "si_paths": [
+          2,
+          6
+        ]
+      },
+      "recorded": {
+        "commit": "b65c6a0",
+        "date": "2026-11-11T01:39:12Z",
+        "platform": "Darwin 24.6.0 arm64",
+        "reference": "the Python ingest worker and the Rust ingest worker compared in the same test, equal (the one-shard row oracle, test_rust_engine.py::row_oracle); K6 stage A: first recording, while both ingest workers exist and agree",
+        "tracked_changes": true
+      },
+      "sha256": "0365708c2b7cef3de1eceecd769a17802302dc6eff3dc9fdd794bf8802a6644e"
+    },
+    "row_oracle/overlapped-pbs0": {
+      "counts": {
+        "bac_paths": [
+          1,
+          18
+        ],
+        "bgt_paths": [
+          1,
+          6
+        ],
+        "brb_paths": [
+          1,
+          51
+        ],
+        "bsi_paths": [
+          1,
+          6
+        ],
+        "rb_paths": [
+          1,
+          3
+        ],
+        "si_paths": [
+          1,
+          6
+        ]
+      },
+      "recorded": {
+        "commit": "b65c6a0",
+        "date": "2026-11-11T01:39:12Z",
+        "platform": "Darwin 24.6.0 arm64",
+        "reference": "the Python ingest worker and the Rust ingest worker compared in the same test, equal (the one-shard row oracle, test_rust_engine.py::row_oracle); K6 stage A: first recording, while both ingest workers exist and agree",
+        "tracked_changes": true
+      },
+      "sha256": "51fff8286f87783da75e2459a29e1fc0a5fd05fcc0026c2d5aa2dce5db63ba9b"
+    },
+    "row_oracle/wide": {
+      "counts": {
+        "bac_paths": [
+          1,
+          4286
+        ],
+        "bgt_paths": [
+          1,
+          1361
+        ],
+        "brb_paths": [
+          4,
+          281191
+        ],
+        "bsi_paths": [
+          1,
+          1361
+        ],
+        "rb_paths": [
+          4,
+          22249
+        ],
+        "si_paths": [
+          4,
+          1361
+        ]
+      },
+      "recorded": {
+        "commit": "b65c6a0",
+        "date": "2026-11-11T01:39:23Z",
+        "platform": "Darwin 24.6.0 arm64",
+        "reference": "the Python ingest worker and the Rust ingest worker compared in the same test, equal (the one-shard row oracle, test_rust_engine.py::row_oracle); K6 stage A: first recording, while both ingest workers exist and agree",
+        "tracked_changes": true
+      },
+      "sha256": "17b1c10bb1d7f5b8911c9e49282f3714da7aee3c2d71ec9680438f0bccc89432"
+    },
+    "shard_lines/gvcfs4_chr21_2mb": {
+      "counts": {
+        "lines": 14
+      },
+      "recorded": {
+        "commit": "b65c6a0",
+        "date": "2026-11-11T02:03:41Z",
+        "platform": "Darwin 24.6.0 arm64",
+        "reference": "the Python ingest worker and the Rust ingest worker compared in the same test, equal (the per-shard lines without their seconds, test_rust_engine.py::test_shard_lines_match_the_python_engine); K6 stage A: first recording, while both ingest workers exist and agree",
+        "tracked_changes": true
+      },
+      "sha256": "58261bfea58ac6d50ad34fc6ad5556ea874134178c9a6389e39d99284d1aedc6"
+    }
+  }
+}

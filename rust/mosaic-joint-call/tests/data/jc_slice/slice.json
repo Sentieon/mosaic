@@ -1,0 +1,39 @@
+{
+ "samples": [
+  {
+   "id": 3,
+   "name": "HG00099"
+  },
+  {
+   "id": 4,
+   "name": "HG00100"
+  },
+  {
+   "id": 5,
+   "name": "HG00101"
+  },
+  {
+   "id": 6,
+   "name": "HG00102"
+  },
+  {
+   "id": 1,
+   "name": "HG00245"
+  },
+  {
+   "id": 2,
+   "name": "HG00420"
+  }
+ ],
+ "removed_ids": [],
+ "contig": {
+  "index": 0,
+  "name": "chr21",
+  "length": 46709983
+ },
+ "region": {
+  "contig": "chr21",
+  "start": 9002902,
+  "end": 10002901
+ }
+}

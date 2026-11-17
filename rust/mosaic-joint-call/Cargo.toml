@@ -1,0 +1,32 @@
+[package]
+name = "mosaic-joint-call"
+version = "0.1.0"
+edition = "2024"
+license = "BSD-2-Clause"
+publish = false
+
+[dependencies]
+anyhow = "1.0.104"
+# Names the `Bytes` type of parquet's `AsyncFileReader` signatures, which the
+# fetch-counting reader wrapper implements; already in the tree through
+# parquet and object_store.
+bytes = "1.12.1"
+arrow = { version = "60", default-features = false }
+clap = { version = "4.6.7", features = ["derive"] }
+mosaic-core = { path = "../mosaic-core" }
+# The async reader (`ParquetObjectReader`, `ParquetRecordBatchStreamBuilder`):
+# row groups fetched by range from `s3://` / `file://`.
+parquet = { version = "60.1.0", default-features = false, features = ["arrow", "brotli", "async", "object_store"] }
+serde = { version = "1.0.229", features = ["derive"] }
+serde_json = "1.0.154"
+# S3 (SigV4, MinIO's path style and HTTP, the AWS credential chain) and the
+# local filesystem behind one interface; the version
+# parquet 60.1's `object_store` feature declares.
+object_store = { version = "0.14.1", features = ["aws"] }
+# The runtime the async parquet reader and object_store run on.
+tokio = { version = "1.54.1", features = ["rt-multi-thread", "sync"] }
+# Stream combinators over the async record-batch streams.
+futures = "0.3.34"
+# The `.gz` output's BGZF blocks, with libdeflate: the crate and version the
+# ingest worker already uses for its gVCF reader.
+noodles-bgzf = { version = "0.52.0", features = ["libdeflate"] }

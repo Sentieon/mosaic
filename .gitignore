@@ -1,0 +1,24 @@
+test_out/*
+test_data/*
+test_subsets/*
+
+global-bundle.pem
+
+nextflow
+.nextflow.log*
+.nextflow/*
+reports/*
+
+__pycache__/
+.pytest_cache/
+.vscode/*
+# Local Nextflow runs
+work/
+logs/
+# The joint-call workflow's default output (workflow/joint_call.nf)
+joint_calls/
+
+# Packaging and OS clutter
+*.egg-info/
+build/
+.DS_Store

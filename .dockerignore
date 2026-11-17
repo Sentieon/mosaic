@@ -1,0 +1,48 @@
+# Exclusions for `docker build .` — keep the image small and avoid
+# leaking local dev files into AWS Batch workers.
+
+# Git + IDE metadata
+.git
+.gitignore
+.gitmodules
+.vscode
+.claude
+.devcontainer
+
+# Test data + outputs (large + local-only)
+test_data
+test_out
+test_subsets
+
+# Local Docker stack (iceberg_test/ has its own compose files + local
+# minio state). Image runs against RDS + Glue, not this.
+iceberg_test
+
+# The Rust build output (the image builds the worker in its own stage)
+rust/target
+
+# Python build / cache artifacts
+__pycache__
+**/__pycache__
+*.pyc
+*.pyo
+.mypy_cache
+
+# Local dev secrets — never baked into the image. RDS password comes
+# from Secrets Manager at runtime; RDS CA cert is downloaded by the
+# Dockerfile, not COPYed from the host.
+global-bundle.pem
+
+# Bundled archives we don't need
+*.tar.gz
+
+# The Nextflow CLI jar — pipeline workers use their own installation
+nextflow
+
+# Nextflow runtime state (from a local `nextflow run`)
+work
+.nextflow
+.nextflow.log*
+reports
+logs
+joint_calls
